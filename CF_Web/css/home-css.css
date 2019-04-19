@@ -1,0 +1,673 @@
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  color: #666;
+  font-weight: 400;
+}
+
+/******************** Footer ************************/
+
+footer {
+  color: white;
+}
+
+.footer-top {
+  background-image: url(/img/coffee-img-4.jpg);
+  background-position: center center;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Oswald", sans-serif;
+}
+
+.hr-line {
+  margin-bottom: 40px;
+  font-weight: 900;
+}
+
+.hours-working {
+  width: 70%;
+}
+
+.hours-working .hours-item .each-item .wh-days,
+.hours-working .hours-item .each-item .wh-hours {
+  font-size: 14px;
+  line-height: 33px;
+  display: table-cell;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hours-working .hours-item .each-item .wh-hours .wh-close {
+  color: #c7a17a;
+}
+
+.hours-working .hours-item .each-item .wh-days {
+  padding-right: 6px;
+}
+
+.hours-working .hours-item .each-item .wh-hours {
+  padding-left: 7px;
+  color: #acacac;
+}
+
+.each-item .wh-lines {
+  display: table-cell;
+  height: 3px;
+  width: 98%;
+  position: relative;
+  z-index: 1;
+}
+
+.each-item .wh-lines .wh-lines-inner {
+  display: block;
+  border-bottom: 1.5px solid rgba(49, 167, 94, 0.25);
+}
+
+.posts-inner ul {
+  list-style: none;
+  padding: 0;
+}
+
+.posts-inner ul li {
+  margin-bottom: 13px;
+  border-bottom: 1.5px solid rgba(49, 167, 94, 0.25);
+  padding-bottom: 15px;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-style: normal;
+}
+
+.posts-inner ul li a:hover,
+.footer-bot a:hover,
+.contact-inner-top .contact-content a {
+  color: #c7a17a;
+  text-decoration: none;
+}
+
+.contact-inner-top {
+  margin-bottom: 20px;
+}
+.posts-inner .post-date {
+  display: block;
+  font-size: 13px;
+  line-height: 14px;
+  color: #c7a17a;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+}
+
+.footer-bot {
+  background-color: #000000;
+  padding: 18px;
+  border-top: 1px solid #000000;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+}
+
+.navbar a,
+.footer-bot a,
+.posts-inner ul li a,
+.menu-item .menu-item-info h3 a {
+  color: inherit;
+}
+
+.contact-inner-top .contact-content,
+.location-inner .location-addr .addr {
+  font-family: "Open Sans", sans-serif;
+  color: #acacac;
+}
+
+.location-inner .location-addr .shop-name {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.location-inner hr {
+  border: 1px solid #45423e;
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.form-inline .form-group .form-control {
+  border: 1px solid #acacac;
+  background-color: transparent;
+  font-size: 12px;
+  padding: 12px 13px;
+  color: #bcbcbc;
+  margin-right: 2px;
+}
+
+.form-inline .submit-email {
+  width: 34px;
+  height: 34px;
+  background-color: #c7a17a;
+  color: white;
+}
+
+.form-inline .submit-email:hover {
+  background-color: #9a6e41;
+  border-color: #9a6e41;
+}
+
+/******************** Navigation Header ************************/
+
+.main-nav {
+  font-size: 17px;
+  background: #000000;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+}
+
+.main-nav .logo {
+  font-weight: 900;
+  font-size: 20px;
+  font-family: "Baloo", Opan Sans;
+}
+
+.main-nav .navbar-collapse ul li:hover {
+  border-bottom: 2px solid #ff9a03;
+}
+
+.view img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.view a {
+  margin-bottom: 40px;
+  background-color: transparent;
+}
+
+.view h3 {
+  margin: 40px 0px;
+}
+
+.dropdown-item-menu:hover {
+  color: #ffffff;
+  background: #000;
+}
+
+/**************************** Menu Home ********************/
+.store-home,
+.menu-home {
+  padding: 70px 0 20px;
+  position: relative;
+  background: url(/img/bg-home-2.png) no-repeat left top #ffffff;
+}
+
+.left-before .menu-title,
+.store-home .store-title,
+.blog-home .blog-title,
+.menu-home .menu-title {
+  float: left;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  font-size: 38px;
+  color: #ea8025;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+}
+
+.left-before .menu-title:after,
+.store-home .store-title:after,
+.blog-home .blog-title:after,
+.menu-home .menu-title:after {
+  content: "";
+  display: block;
+  width: 50%;
+  border-bottom: 5px solid rgb(100, 54, 54);
+}
+
+.blog-home .view-more,
+.menu-home .view-more {
+  float: right;
+  margin-top: 5px;
+}
+
+.menu-home .view-more a {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #000;
+  font-family: "Lato", sans-serif;
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(to right, white 50%, black 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.2s ease-out;
+}
+
+.menu-home .view-more a:hover {
+  background-color: transparent;
+  color: #000000;
+  background-position: left bottom;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.clearfix::before {
+  content: " ";
+  display: table;
+}
+
+.menu-item {
+  margin: 0px 19px 40px;
+}
+
+.menu-item .menu-item-inner .image-resize {
+  height: 342px;
+  width: 342px;
+}
+
+.menu-item .menu-item-info {
+  font-family: "Baloo", Opan Sans;
+}
+
+.menu-item .menu-item-info h3 {
+  margin: 25px 0px;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.menu-item .menu-item-info h3 a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.6s ease;
+}
+
+.menu-item .menu-item-info h3 a:hover {
+  color: #ea8025;
+}
+
+.menu-item .menu-item-info .price-item {
+  font-size: 25px;
+  color: #ea8025;
+  margin-bottom: 10px;
+}
+
+.menu-item .menu-item-info .order-item,
+.menu-item .menu-item-info .read-item {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.card-body .read-more,
+.menu-item .menu-item-info .order-item {
+  border: 2px solid #ea8025;
+  padding: 7px 21px;
+  vertical-align: middle;
+  background: transparent;
+  display: inline-block;
+  color: #ffffff;
+  background: #ea8025;
+  margin-right: 10px;
+}
+
+.card-body .read-more:hover,
+.menu-item .menu-item-info .order-item:hover {
+  color: #ea8025;
+  background: transparent;
+}
+
+.menu-item .menu-item-info .read-item {
+  padding: 7px 21px;
+  border: 2px solid #ea8025;
+  vertical-align: middle;
+  background: transparent;
+  display: inline-block;
+  color: #ea8025;
+}
+
+/*****************************************Blog Home *********************************/
+
+.blog-home {
+  padding: 70px 0 20px;
+  position: relative;
+  background: url(/img/bg-home-1.png) no-repeat left top #191919;
+}
+
+.menu-item .menu-item-info .read-item:hover {
+  background-color: #ea8025;
+  color: #ffffff;
+}
+
+.blog-home .blog-title:after {
+  content: "";
+  display: block;
+  width: 50%;
+  border-bottom: 5px solid #ffffff;
+}
+
+.blog-home .view-more a {
+  background-color: #ffffff;
+  color: #ea8025;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #191919;
+  font-family: "Lato", sans-serif;
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(to right, black 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.2s ease-in;
+}
+
+.blog-home .view-more a:hover {
+  background: transparent;
+  border: 2px solid #ffffff;
+  background-position: left bottom;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.card-body h4 {
+  font-family: "Baloo", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.card-body h4 a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.card-body h4 a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.6s ease;
+}
+
+.card-body h4 a:hover {
+  color: #ea8025;
+}
+
+.card-body .read-more {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.card-body .card-text {
+  font-family: "Lato", sans-serif;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.card-body .article-news {
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ea8025;
+}
+
+/********************************************** Store Home ******************************/
+
+.store-home .store-sig {
+  background-color: #ea8025;
+}
+
+.store-home .store-sig h4 {
+  font-family: "Lato", sans-serif;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.store-home .store-sig p {
+  margin-left: 15px;
+  color: #ffffff;
+}
+
+.store-home .store-slide {
+  margin-top: 20px;
+}
+
+.store-home .store-slide .text-arrow {
+  color: #ea8025;
+}
+
+.store-home .store-slide .text-arrow:hover {
+  color: #ffffff;
+  background-color: #ea8025;
+}
+
+/************************************** Google Map  *************************/
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.google-map {
+  margin-top: 20px;
+}
+
+/******************************************* Menu Home.html  *********************/
+
+.menu-wrap {
+  padding: 100px 0px 50px;
+}
+
+.side-bar {
+  top: 70px;
+}
+
+.side-bar .sidebar-menu {
+  background: #ea8025;
+}
+
+.side-bar .sidebar-menu ul li {
+  padding: 14px 30px;
+}
+
+.side-bar .sidebar-menu ul {
+  list-style-type: none;
+}
+
+.side-bar .sidebar-menu ul li {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.side-bar .sidebar-menu ul li:hover {
+  color: #ea8025;
+  background-color: #ffffff;
+}
+
+.side-bar .sidebar-menu ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.left-before::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  width: 2px;
+  height: 100%;
+  top: 0px;
+  background: #ea8025;
+}
+
+.left-before .menu-title:after {
+  content: "";
+  display: block;
+  width: 50%;
+  border-bottom: 5px solid #ea8025;
+}
+
+/********************************************* Shopping Cart  ********************************/
+
+.quantity {
+  float: left;
+  margin-right: 15px;
+  background-color: #eee;
+  position: relative;
+  width: 80px;
+  overflow: hidden;
+}
+
+.quantity input {
+  margin: 0;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  float: right;
+  color: #000;
+  font-size: 20px;
+  border: 0;
+  outline: 0;
+  background-color: #f6f6f6;
+}
+
+.quantity input.qty {
+  position: relative;
+  border: 0;
+  width: 100%;
+  height: 40px;
+  padding: 10px 25px 10px 10px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 0;
+  background-clip: padding-box;
+}
+
+.quantity .minus,
+.quantity .plus {
+  line-height: 0;
+  background-clip: padding-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: #bbb;
+  font-size: 20px;
+  position: absolute;
+  height: 50%;
+  border: 0;
+  right: 0;
+  padding: 0;
+  width: 25px;
+  z-index: 3;
+}
+
+.quantity .minus:hover,
+.quantity .plus:hover {
+  background-color: #ea8025;
+}
+
+.quantity .minus {
+  bottom: 0;
+}
+.shopping-cart {
+  margin-top: 20px;
+}
+
+.shopping-cart a {
+  color: #ffffff;
+}
+
+.shopping-cart a:hover {
+  background: #ea8025;
+  color: #ffffff;
+}
+
+/************************************** Recruitment ***********************************/
+
+.bg-text a {
+  text-transform: uppercase;
+  background-color: #ea8025;
+  padding: 10px 10px;
+  color: inherit;
+}
+
+.open-job h2 {
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: 900;
+}
+
+.open-job .head-recr {
+  text-align: center;
+  padding-bottom: 30px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.open-job p {
+  opacity: 0.7;
+}
+
+.open-job .content-recr .title-job {
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.open-job .content-recr .title-job h5{
+  font-weight: 900;
+}
+
+.open-job .content-recr .title-job::after {
+  content: "";
+  display: block;
+  width: 9%;
+  border-bottom: 5px solid #ea8025;
+}
+
+.content-recr h6{
+  text-transform: uppercase;
+  letter-spacing: 3;
+  color: #000;
+  font-weight: 500;
+}
+
+.content-recr button{
+  background-color: #ea8025;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 20px;
+}

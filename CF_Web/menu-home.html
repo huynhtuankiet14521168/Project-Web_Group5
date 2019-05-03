@@ -23,16 +23,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
@@ -45,7 +36,7 @@
     <link rel="stylesheet/less" type="text/css" href="styles.less" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
     <link rel="stylesheet" href="css/home-css.css" />
-    <script src="Js/home-js.js"></script>
+    <script src="/home-js.js" async></script>
     <title>Menu</title>
   </head>
   <body>
@@ -78,10 +69,7 @@
             </a>
           </li>
           <!-- Dropdown -->
-          <li
-            class="nav-item dropdown active"
-            style="border-bottom: 2px solid #ff9a03;"
-          >
+          <li class="nav-item dropdown active">
             <a
               class="nav-link dropdown-toggle"
               id="navbarDropdownMenuLink"
@@ -100,6 +88,9 @@
               <a class="dropdown-item dropdown-item-menu" href="/menu-home.html"
                 >Macchiato</a
               >
+              <a class="dropdown-item dropdown-item-menu" href="/menu-home.html"
+                >Tea</a
+              >
             </div>
           </li>
           <li class="nav-item active">
@@ -111,6 +102,15 @@
         </ul>
         <!-- Links -->
 
+        <button type="button" class="btn">
+          <span
+            class="search-icon"
+            data-toggle="modal"
+            data-target="#loginform"
+            style="color: white; margin-right: 5px;"
+            ><i class="fas fa-user fa-2x"></i
+          ></span>
+        </button>
         <form class="form-inline">
           <div class="md-form my-0">
             <input
@@ -122,19 +122,341 @@
           </div>
           <a href="#"
             ><span class="search-icon" style="color: white;"
-              ><i class="fas fa-search fa-1.5x"></i></span
+              ><i class="fas fa-search"></i></span
           ></a>
-          <a href="/shopping-cart-home.html"
-            ><span class="search-icon" style="color: white; margin-left: 10px;"
+          <button type="button" class="btn">
+            <span
+              class="search-icon"
+              style="color: white;"
+              data-target="#cart"
+              data-toggle="modal"
               ><i class="fas fa-shopping-cart fa-2x"></i></span
-          ></a>
+            ><span style="color: #ffffff;"
+              >(<span class="total-count"></span>)</span
+            >
+          </button>
         </form>
       </div>
       <!-- Collapsible content -->
     </nav>
-    <!--/.Navbar-->
+    <!-- Modal Shopping Cart -->
+    <div
+      class="modal fade"
+      id="cart"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="font-size: 24px; font-weight: 900; text-transform: uppercase;"
+            >
+              Your Cart
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="show-cart table"></table>
+            <div>Total Price: <span class="total-cart"></span> Đ</div>
+          </div>
+          <div class="modal-footer">
+            <button class="clear-cart btn btn-danger mr-auto">Clear Cart</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Purchase</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Shopping Cart -->
+    <!-- Modal Login -->
+    <div
+      class="modal fade"
+      id="loginform"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="row form-header">
+                <div class="col-md-11">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalLabel"
+                    style="font-weight: 700;"
+                  >
+                    Welcome to HighLand Coffee! Please login.
+                  </h5>
+                </div>
+                <div class="col-md-1">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              </div>
+              <fieldset>
+                <div class="social-login">
+                  <button class="btn facebook-btn social-btn" type="button">
+                    <span
+                      ><i class="fab fa-facebook-f"></i> Sign in with
+                      Facebook</span
+                    >
+                  </button>
+                  <button class="btn google-btn social-btn" type="button">
+                    <span
+                      ><i class="fab fa-google-plus-g"></i> Sign in with
+                      Google+</span
+                    >
+                  </button>
+                </div>
+                <p style="text-align:center">OR</p>
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="fn"
+                    >Phone Number or Email*</label
+                  >
+                  <div class="col-md-12">
+                    <input
+                      id="fn"
+                      name="fn"
+                      type="text"
+                      placeholder="Please enter your Phone Number or Email"
+                      class="form-control input-md"
+                      required=""
+                    />
+                  </div>
+                </div>
 
-    <!-- Main Menu -->  
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="ln"
+                    >Password*</label
+                  >
+                  <div class="col-md-12">
+                    <input
+                      id="ln"
+                      name="ln"
+                      type="text"
+                      placeholder="Please enter your Password"
+                      class="form-control input-md"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <button class="btn btn-dark btn-block" type="submit">
+                      <i class="fas fa-sign-in-alt"></i> Sign in
+                    </button>
+                  </div>
+                  <div class="col-md-12">
+                    <a href="#" id="forgot_pswd">Forgot password?</a>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <button
+                      class="btn btn-primary btn-block"
+                      type="button"
+                      id="btn-signup"
+                      style="background-color: #ea8025;"
+                    >
+                      <i class="fas fa-user-plus"></i> Sign up New Account
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <!-- Forgot PW -->
+          <form action="/reset/password/" class="form-reset">
+            <div class="container">
+              <div class="row form-header">
+                <div class="col-md-10">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalLabel"
+                    style="font-weight: 700;"
+                  >
+                    Reset Your Password
+                  </h5>
+                </div>
+                <div class="col-md-2">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <input
+                type="email"
+                id="resetEmail"
+                class="form-control"
+                placeholder="Enter your email address"
+                required=""
+                autofocus=""
+              />
+              <button class="btn btn-primary btn-block" type="submit">
+                Reset Password
+              </button>
+              <a href="#" id="cancel_reset"
+                ><i class="fas fa-angle-left"></i> Back</a
+              >
+            </div>
+          </form>
+          <!-- Forgot PW -->
+
+          <!-- Sign Up Form -->
+          <form action="/signup/" class="form-signup">
+            <div class="container">
+              <div class="row form-header">
+                <div class="col-md-10">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalLabel"
+                    style="font-weight: 700;"
+                  >
+                    Create Your Coffee Account
+                  </h5>
+                </div>
+                <div class="col-md-2">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="social-login text-center">
+                <button class="btn facebook-btn social-btn" type="button">
+                  <span
+                    ><i class="fab fa-facebook-f"></i> Sign up with
+                    Facebook</span
+                  >
+                </button>
+              </div>
+              <div class="social-login text-center">
+                <button class="btn google-btn social-btn" type="button">
+                  <span
+                    ><i class="fab fa-google-plus-g"></i> Sign up with
+                    Google+</span
+                  >
+                </button>
+              </div>
+            </div>
+
+            <p style="text-align:center">OR</p>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <input
+                    type="text"
+                    id="user-name"
+                    class="form-control"
+                    placeholder="Full name"
+                    required=""
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <input
+                    type="email"
+                    id="user-email"
+                    class="form-control"
+                    placeholder="Email address"
+                    required
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <input
+                    type="phonenumber"
+                    id="phone-number"
+                    class="form-control"
+                    placeholder="Phone Number"
+                    required
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <input
+                    type="password"
+                    id="user-pass"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <input
+                    type="password"
+                    id="user-repeatpass"
+                    class="form-control"
+                    placeholder="Repeat Password"
+                    required
+                    autofocus=""
+                  />
+                </div>
+                <div class="col-md-12">
+                  <button class="btn btn-primary btn-block" type="submit">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                  </button>
+                </div>
+                <div class="col-md-12">
+                  <a href="#" id="cancel_signup"
+                    ><i class="fas fa-angle-left"></i> Back</a
+                  >
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- Sign Up Form -->
+          <br />
+        </div>
+      </div>
+    </div>
+    <!-- Modal Login -->
+
+    <!-- Main Menu -->
 
     <div
       class="jumbotron"
@@ -142,7 +464,10 @@
     >
       <div class="text-white text-left py-5 px-4 my-5">
         <div>
-          <h2 class="card-title h1-responsive pt-3 mb-5 font-bold" style="text-transform: uppercase; font-size: 40px;">
+          <h2
+            class="card-title h1-responsive pt-3 mb-5 font-bold"
+            style="text-transform: uppercase; font-size: 40px;"
+          >
             <strong>Menu</strong>
           </h2>
         </div>
@@ -179,7 +504,7 @@
               <div class="clearfix"></div>
               <div class="d-flex flex-row flex-wrap bd-highlight">
                 <div class="menu-item">
-                  <div class="menu-item-inner">
+                  <div class="menu-item-inner item-img">
                     <a href="#" title=""
                       ><img
                         src="img/menu-item/item-1.jpg"
@@ -189,13 +514,22 @@
                   </div>
                   <div class="menu-item-info">
                     <h3>
-                      <a href="#" title="TRA O LONG SEN"
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
                         >Trà Ô Long Sen An Nhiên</a
                       >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Sen An Nhiên"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -209,11 +543,22 @@
                   </div>
                   <div class="menu-item-info">
                     <h3>
-                      <a href="#" title="TRA O LONG SEN">Caramel Macchiato</a>
+                      <a href="#" class="shop-item-title" title="TRA O LONG SEN"
+                        >Caramel Macchiato</a
+                      >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Caramel Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -227,13 +572,22 @@
                   </div>
                   <div class="menu-item-info">
                     <h3>
-                      <a href="#" title="TRA O LONG SEN"
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
                         >Trà Ô Long Vải Như Ý</a
                       >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Vải Như Ý"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -247,13 +601,22 @@
                   </div>
                   <div class="menu-item-info">
                     <h3>
-                      <a href="#" title="TRA O LONG SEN"
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
                         >Da Cá Sấy Giòn Vị Trứng Muối</a
                       >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Da Cá Sấy Giòn Vị Trứng Muối"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -267,11 +630,22 @@
                   </div>
                   <div class="menu-item-info">
                     <h3>
-                      <a href="#" title="TRA O LONG SEN">Trà Đào Cam Sả</a>
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
+                        >Trà Đào Cam Sả</a
+                      >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đào Cam Sả"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -280,16 +654,27 @@
                       ><img
                         src="img/menu-item/item-6.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
                     <h3>
-                      <a href="#" title="TRA O LONG SEN">Trà Đen Macchiato</a>
+                      <a href="#" title="TRA O LONG SEN" class="shop-item-title"
+                        >Trà Đen Macchiato</a
+                      >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đen Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
               </div>
@@ -308,7 +693,7 @@
                       ><img
                         src="img/menu-item/item-2.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -318,8 +703,17 @@
                       >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Sen An Nhiên"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -328,7 +722,7 @@
                       ><img
                         src="img/menu-item/item-3.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -336,8 +730,17 @@
                       <a href="#" title="TRA O LONG SEN">Caramel Macchiato</a>
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Caramel Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -346,7 +749,7 @@
                       ><img
                         src="img/menu-item/item-1.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -356,8 +759,17 @@
                       >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Vải Như Ý"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -366,7 +778,7 @@
                       ><img
                         src="img/menu-item/item-4.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -376,8 +788,17 @@
                       >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Da Cá Sấy Giòn Vị Trứng Muối"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -386,7 +807,7 @@
                       ><img
                         src="img/menu-item/item-5.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -394,8 +815,17 @@
                       <a href="#" title="TRA O LONG SEN">Trà Đào Cam Sả</a>
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đào Cam Sả"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -404,7 +834,7 @@
                       ><img
                         src="img/menu-item/item-6.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -412,8 +842,17 @@
                       <a href="#" title="TRA O LONG SEN">Trà Đen Macchiato</a>
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đen Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
               </div>
@@ -430,7 +869,7 @@
                       ><img
                         src="img/menu-item/item-5.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -440,8 +879,17 @@
                       >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Sen An Nhiên"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -450,7 +898,7 @@
                       ><img
                         src="img/menu-item/item-6.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -458,8 +906,17 @@
                       <a href="#" title="TRA O LONG SEN">Caramel Macchiato</a>
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Caramel Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -468,7 +925,7 @@
                       ><img
                         src="img/menu-item/item-4.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -478,8 +935,17 @@
                       >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Ô Long Vải Như Ý"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -488,7 +954,7 @@
                       ><img
                         src="img/menu-item/item-3.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -498,8 +964,15 @@
                       >
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button class="btn order-item" type="button">Order</button>
+                    <button
+                      class="btn read-item"
+                      type="button"
+                      data-name="Da Cá Sấy Giòn Vị Trứng Muối"
+                      data-price="45000"
+                    >
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -508,7 +981,7 @@
                       ><img
                         src="img/menu-item/item-2.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -516,8 +989,17 @@
                       <a href="#" title="TRA O LONG SEN">Trà Đào Cam Sả</a>
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đào Cam Sả"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
                 <div class="menu-item">
@@ -526,7 +1008,7 @@
                       ><img
                         src="img/menu-item/item-1.jpg"
                         alt="tra o long sen tu nhien"
-                        class="image-resize img-fluid"
+                        class="image-resize img-fluid item-img"
                     /></a>
                   </div>
                   <div class="menu-item-info">
@@ -534,8 +1016,17 @@
                       <a href="#" title="TRA O LONG SEN">Trà Đen Macchiato</a>
                     </h3>
                     <div class="price-item">45,000 Đ</div>
-                    <a href="#" target="_blank" class="order-item">Order</a>
-                    <a href="#" target="_blank" class="read-item">Read More</a>
+                    <button
+                      class="btn order-item"
+                      type="button"
+                      data-name="Trà Đen Macchiato"
+                      data-price="45000"
+                    >
+                      Order
+                    </button>
+                    <button class="btn read-item" type="button">
+                      Read More
+                    </button>
                   </div>
                 </div>
               </div>

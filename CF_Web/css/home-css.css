@@ -178,6 +178,56 @@ footer {
   border-bottom: 2px solid #ff9a03;
 }
 
+.modal-body .social-login {
+  margin: 5px 0px 5px 0px;
+}
+
+.modal-body .social-login button {
+  margin-left: 20px;
+}
+
+.modal-body .social-login .facebook-btn,
+.form-signup .social-login .facebook-btn {
+  background-color: #3c589c;
+}
+
+.modal-body .social-login .social-btn,
+.form-signup .social-login .social-btn {
+  color: #ffffff;
+}
+
+.modal-body .social-login .google-btn,
+.form-signup .social-login .google-btn {
+  background-color: #df4b3b;
+}
+
+.form-header {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #acacac;
+}
+
+.form-reset .form-control,
+.form-reset button,
+.form-reset #cancel_reset {
+  margin-top: 10px;
+}
+
+.form-signup .form-control,
+.form-signup button {
+  margin-bottom: 10px;
+}
+
+/**************************************** Toggle hide or show *************************/
+form.form-reset,
+form.form-signup {
+  display: none;
+}
+
+form.form-horizontal {
+  display: block;
+}
+
 .view img {
   background-repeat: no-repeat;
   background-size: cover;
@@ -304,7 +354,8 @@ footer {
 }
 
 .menu-item .menu-item-info .order-item,
-.menu-item .menu-item-info .read-item {
+.menu-item .menu-item-info .read-item,
+.menu-item .menu-item-info .order-item-main {
   text-decoration: none;
   color: inherit;
   display: block;
@@ -314,7 +365,8 @@ footer {
 }
 
 .card-body .read-more,
-.menu-item .menu-item-info .order-item {
+.menu-item .menu-item-info .order-item,
+.menu-item .menu-item-info .order-item-main {
   border: 2px solid #ea8025;
   padding: 7px 21px;
   vertical-align: middle;
@@ -326,7 +378,8 @@ footer {
 }
 
 .card-body .read-more:hover,
-.menu-item .menu-item-info .order-item:hover {
+.menu-item .menu-item-info .order-item:hover,
+.menu-item .menu-item-info .order-item-main:hover {
   color: #ea8025;
   background: transparent;
 }
@@ -460,6 +513,20 @@ footer {
 .store-home .store-slide .text-arrow:hover {
   color: #ffffff;
   background-color: #ea8025;
+}
+
+.store-home .store-slide .store-name {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  line-height: 60px;
+  color: #ffffff;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 22px;
+  background: linear-gradient(to top, #000, transparent);
+  font-weight: 700;
+  font-family: "Bebas Neue", "Lato", sans-serif;
 }
 
 /************************************** Google Map  *************************/
@@ -615,6 +682,11 @@ footer {
   color: #ffffff;
 }
 
+.card-body .cart-item {
+  padding: 20px;
+  border-bottom: 1px solid #acacac;
+}
+
 /************************************** Recruitment ***********************************/
 
 .bg-text a {
@@ -647,7 +719,7 @@ footer {
   color: #000000;
 }
 
-.open-job .content-recr .title-job h5{
+.open-job .content-recr .title-job h5 {
   font-weight: 900;
 }
 
@@ -658,14 +730,14 @@ footer {
   border-bottom: 5px solid #ea8025;
 }
 
-.content-recr h6{
+.content-recr h6 {
   text-transform: uppercase;
   letter-spacing: 3;
   color: #000;
   font-weight: 500;
 }
 
-.content-recr button{
+.content-recr button {
   background-color: #ea8025;
   color: #ffffff;
   text-transform: uppercase;
